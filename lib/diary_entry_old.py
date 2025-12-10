@@ -1,17 +1,13 @@
-# File: lib/diary_entry.py
-
 class DiaryEntry:
-    # Public Properties:
-    #   title: a string
-    #   contents: a string
-
-
     def __init__(self, title, contents):
-        self.title = title
-        self.contents = contents
-        self._input_string = self.title + " " + self.contents
+        self._title = title
+        self._contents = contents
+        self._input_string = self._title + " " + self._contents
         self._input_list = self._input_string.split(" ")
         self._current_read_index = 0
+
+    def format(self):
+        return f"{self._title}: {self._contents}"
 
     def count_words(self):
         return len(self._input_list)
